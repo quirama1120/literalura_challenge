@@ -1,12 +1,17 @@
 package com.alura.literatura_challenge.main;
 import com.alura.literatura_challenge.main.logical.ConsultingBooks;
 import com.alura.literatura_challenge.model.Book;
-import com.alura.literatura_challenge.model.BooksData;
+import com.alura.literatura_challenge.service.DataConversor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
 import java.util.Scanner;
+@Component
 public class Main {
+    @Autowired
+    ConsultingBooks consultingBooks;
+DataConversor converse = new DataConversor();
+Book book = new Book();
     public void mainCall() {
 
         Scanner keyword = new Scanner(System.in);
@@ -24,10 +29,8 @@ public class Main {
             int userInput = keyword.nextInt();
             switch (userInput) {
                 case 1 -> {
-                    ConsultingBooks consultingBooks = new ConsultingBooks();
-                    consultingBooks.consultingData();
-
-
+                    var bookInformation = consultingBooks.consultingData();
+                    System.out.println(bookInformation);
                 } case 2 -> {
                     System.out.println("por ahora éste es el caso 2");
                 } case 0 -> {
