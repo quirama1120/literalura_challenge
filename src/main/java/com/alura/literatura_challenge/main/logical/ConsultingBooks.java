@@ -1,5 +1,4 @@
 package com.alura.literatura_challenge.main.logical;
-
 import com.alura.literatura_challenge.model.ApiResponse;
 import com.alura.literatura_challenge.model.Author;
 import com.alura.literatura_challenge.model.Book;
@@ -9,8 +8,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import java.beans.Transient;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
@@ -58,7 +55,7 @@ public class ConsultingBooks {
                     } else {
                         author = authorRepository.saveAndFlush(author);
                     }
-                    List<Author> authorsList = Collections.singletonList(author);
+                    List<Author> authorsList = new ArrayList<>(Collections.singletonList(author));
                     Book book = new Book();
                     book.setTitle(e.getTitle());
                     book.setLanguages(e.getLanguages());
