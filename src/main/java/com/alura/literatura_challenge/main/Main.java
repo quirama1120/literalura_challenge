@@ -2,6 +2,7 @@ package com.alura.literatura_challenge.main;
 import com.alura.literatura_challenge.main.logical.ConsultingBooks;
 import com.alura.literatura_challenge.model.Author;
 import com.alura.literatura_challenge.model.Book;
+import com.alura.literatura_challenge.repository.AuthorRepository;
 import com.alura.literatura_challenge.service.AuthorsInDataBase;
 import com.alura.literatura_challenge.service.BooksInDatabase;
 import com.alura.literatura_challenge.service.DataConversor;
@@ -35,17 +36,16 @@ Book book = new Book();
 					""");
             int userInput = keyword.nextInt();
             switch (userInput) {
-                case 1 -> {
-                    var bookInformation = consultingBooks.consultingData();
-                } case 2 -> {
-                    booksInDatabase.booksInDatabaseSearch();
-                } case 3 -> {
-                    authorsInDataBase.authorsInDatabase();
-                }
+                case 1 -> consultingBooks.consultingData();
+                case 2 -> booksInDatabase.booksInDatabaseSearch();
+                case 3 -> authorsInDataBase.authorsInDatabase();
+                case 4 -> authorsInDataBase.livingAuthorsOnDate();
+                case 5 -> booksInDatabase.displayBooksByLanguage();
                 case 0 -> {
                     System.out.println("Finalizando el programa...");
                     out = false;
-                }
+                } default -> System.out.println("Has ingresado la opción incorrecta.");
+
             }
         }
     }
