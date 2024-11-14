@@ -1,10 +1,8 @@
 package com.alura.literatura_challenge.service;
-
 import com.alura.literatura_challenge.model.Book;
 import com.alura.literatura_challenge.repository.BooksRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Scanner;
 
