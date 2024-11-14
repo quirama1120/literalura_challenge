@@ -1,8 +1,6 @@
 package com.alura.literatura_challenge.main;
 import com.alura.literatura_challenge.main.logical.ConsultingBooks;
-import com.alura.literatura_challenge.model.Author;
 import com.alura.literatura_challenge.model.Book;
-import com.alura.literatura_challenge.repository.AuthorRepository;
 import com.alura.literatura_challenge.service.AuthorsInDataBase;
 import com.alura.literatura_challenge.service.BooksInDatabase;
 import com.alura.literatura_challenge.service.DataConversor;
